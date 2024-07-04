@@ -11,8 +11,12 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const CommonRouter= require('./Router/CommonRouter')
+const weatherRoutes= require('./Router/WheatherRouter')
+const FavoriteRoutes= require('./Router/FavoriteRoutes')
 
 app.use('/',CommonRouter)
+app.use('/weather', weatherRoutes);
+// app.use('/favorites', FavoriteRoutes);
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
